@@ -19,4 +19,4 @@ particle4dev:cheerio
 </code>
 </pre>
 
-Testing page: [http://rs-hs-test.meteor.com/](http://rs-hs-test.meteor.com/)
+Testing page: [http://rs-hiscores.meteor.com/](http://rs-hiscores.meteor.com/)
