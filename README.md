@@ -1,9 +1,13 @@
 #RuneScape Hiscore Checker
 ###Built with (Meteor.js)[https://www.meteor.com]
 
-###Installation
+###Running aplication
 <pre>
 <code>
-$ mrt add bootstrap
+$ mrt
 </code>
 </pre>
+
+Now you can check <code>http://localhost:3000/</code>
+
+(http://rs-hs-test.meteor.com/)[http://rs-hs-test.meteor.com/]
