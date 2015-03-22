@@ -12,8 +12,7 @@ Now you can check <code>http://localhost:3000/</code>
 ###Packages added
 <pre>
 <code>
-less
-nemo64:bootstrap
+twbs:bootstrap
 http
 numeral:numeral
 particle4dev:cheerio
