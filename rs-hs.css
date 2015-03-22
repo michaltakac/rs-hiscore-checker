@@ -1,9 +1,25 @@
-#content {
+/* GitHub Fork */
+@media (max-width: 600px) {
+  .gh-fork {
+    display: none;
+  }
+}
+
+/* Main */
+#wrapper {
   margin: 0 100px;
 }
-h1 {
+.content {
+  width: 340px;
+  margin: 0 auto;
+}
+.content h1 {
+  margin: 10px auto;
+  width: 264px;
   font-size: 1.4em;
 }
+
+/* Form */
 .hs-form {
   background: #F3F4FD;
   width: 339px;
@@ -23,6 +39,7 @@ h1 {
   margin-left: 2px;
 }
 
+/* Table */
 #rs-hiscores {
   border: 1px solid #c7c7c7;
   font-size: 13px;
@@ -68,6 +85,14 @@ h1 {
 	width: 100px;
 }
 
+/* Footer */
+footer {
+  font-size: 10px;
+  margin: 5px auto;
+  text-align: center;
+}
+
+/* Icons */
 .iconHiscores {
 	background-size: contain !important;
 	float: left;
