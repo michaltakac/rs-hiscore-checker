@@ -6,7 +6,7 @@ h1 {
 }
 .hs-form {
   background: #F3F4FD;
-  width: 333px;
+  width: 339px;
   padding: 10px;
   border: 1px solid #c7c7c7;
   margin-bottom: -1px;
@@ -16,7 +16,7 @@ h1 {
 }
 #getUsername label {
   font-weight: normal;
-  width: 150px;
+  width: 120px;
   text-align: right;
 }
 #getUsername select {
@@ -36,7 +36,7 @@ h1 {
 
 #rs-hiscores td {
 	border: 1px solid #c7c7c7;
-	padding: 4px;
+	padding: 2px 4px;
 }
 #rs-hiscores td:nth-child(2),
 #rs-hiscores td:nth-child(3),
@@ -59,21 +59,21 @@ h1 {
 	width: 120px;
 }
 .rshs-table-rank {
-	width: 50px;
+	width: 70px;
 }
 .rshs-table-level {
 	width: 30px;
 }
 .rshs-table-xp {
-	width: 90px;
+	width: 100px;
 }
 
 .iconHiscores {
 	background-size: contain !important;
-  	float: left;
-  	height: 12px;
-  	margin-right: 3px;
-  	width: 12px;
+	float: left;
+	height: 12px;
+	margin: 3px 3px 3px 0;
+	width: 12px;
 }
 .iconOverall {
   	background: url('/img/overall.gif') no-repeat;
