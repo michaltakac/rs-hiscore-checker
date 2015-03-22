@@ -1,5 +1,5 @@
 #RuneScape Hiscore Checker
-###Built with (Meteor.js)[https://www.meteor.com]
+###Built with [Meteor.js](https://www.meteor.com)
 
 ###Running aplication
 <pre>
@@ -10,4 +10,4 @@ $ mrt
 
 Now you can check <code>http://localhost:3000/</code>
 
-(http://rs-hs-test.meteor.com/)[http://rs-hs-test.meteor.com/]
+[http://rs-hs-test.meteor.com/](http://rs-hs-test.meteor.com/)
