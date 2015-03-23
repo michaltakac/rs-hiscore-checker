@@ -8,7 +8,7 @@
 	  <div class="content">
 	  	<h1>RuneScape Hiscores Lookup</h1>
 	  	{{> fetchStats}}
-	    {{> stats}}
+	    {{> hiscores}}
 	    <footer>&copy; 2015 <a href="http://www.michaltakac.com" target="_blank">Michal Takac</a> - Released under the <a href="https://github.com/michaltakac/rs-hiscore-checker/blob/master/LICENSE" target="_blank">MIT license</a>.<br />
 	    <a href="http://www.runescape.com" target="_blank">RuneScape</a> &reg; is a trademark of Jagex Ltd &copy; 1999 - 2015.</footer>
 	  </div>
@@ -31,15 +31,8 @@
 	</fieldset>
 </template>
 
-<template name="stats">
-	{{#if getStats}}
-		{{> hiscores}}
-	{{else}}
-		<p>Waiting on username...</p>
-	{{/if}}
-</template>
-
 <template name="hiscores">
+	{{#if getData}}
 	<table id="rs-hiscores">
 		<thead class="rshs-table-header">
 			<tr>
@@ -50,175 +43,15 @@
 			</tr>
 		</thead>
 		<tbody id="rs-hiscore-data">
-			<tr>
-				<td><div class="iconHiscores iconOverall" title="Overall"></div> Overall</td>
-				<td>{{overallRank}}</td>
-				<td>{{overallLevel}}</td>
-				<td>{{overallXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconAttack" title="Attack"></div> Attack</td>
-				<td>{{attackRank}}</td>
-				<td>{{attackLevel}}</td>
-				<td>{{attackXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconDefence" title="Defence"></div> Defence</td>
-				<td>{{defenceRank}}</td>
-				<td>{{defenceLevel}}</td>
-				<td>{{defenceXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconStrength" title="Strength"></div> Strength</td>
-				<td>{{strengthRank}}</td>
-				<td>{{strengthLevel}}</td>
-				<td>{{strengthXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconConstitution" title="Constitution"></div> Constitution</td>
-				<td>{{hitpointsRank}}</td>
-				<td>{{hitpointsLevel}}</td>
-				<td>{{hitpointsXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconRanged" title="Ranged"></div> Ranged</td>
-				<td>{{rangedRank}}</td>
-				<td>{{rangedLevel}}</td>
-				<td>{{rangedXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconPrayer" title="Prayer"></div> Prayer</td>
-				<td>{{prayerRank}}</td>
-				<td>{{prayerLevel}}</td>
-				<td>{{prayerXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconMagic" title="Magic"></div> Magic</td>
-				<td>{{magicRank}}</td>
-				<td>{{magicLevel}}</td>
-				<td>{{magicXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconCooking" title="Cooking"></div> Cooking</td>
-				<td>{{cookingRank}}</td>
-				<td>{{cookingLevel}}</td>
-				<td>{{cookingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconWoodcutting" title="Woodcutting"></div> Woodcutting</td>
-				<td>{{woodcuttingRank}}</td>
-				<td>{{woodcuttingLevel}}</td>
-				<td>{{woodcuttingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconFletching" title="Fletching"></div> Fletching</td>
-				<td>{{fletchingRank}}</td>
-				<td>{{fletchingLevel}}</td>
-				<td>{{fletchingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconFishing" title="Fishing"></div> Fishing</td>
-				<td>{{fishingRank}}</td>
-				<td>{{fishingLevel}}</td>
-				<td>{{fishingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconFiremaking" title="Firemaking"></div> Firemaking</td>
-				<td>{{firemakingRank}}</td>
-				<td>{{firemakingLevel}}</td>
-				<td>{{firemakingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconCrafting" title="Crafting"></div> Crafting</td>
-				<td>{{craftingRank}}</td>
-				<td>{{craftingLevel}}</td>
-				<td>{{craftingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconSmithing" title="Smithing"></div> Smithing</td>
-				<td>{{smithingRank}}</td>
-				<td>{{smithingLevel}}</td>
-				<td>{{smithingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconMining" title="Mining"></div> Mining</td>
-				<td>{{miningRank}}</td>
-				<td>{{miningLevel}}</td>
-				<td>{{miningXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconHerblore" title="Herblore"></div> Herblore</td>
-				<td>{{herbloreRank}}</td>
-				<td>{{herbloreLevel}}</td>
-				<td>{{herbloreXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconAgility" title="Agility"></div> Agility</td>
-				<td>{{agilityRank}}</td>
-				<td>{{agilityLevel}}</td>
-				<td>{{agilityXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconThieving" title="Thieving"></div> Thieving</td>
-				<td>{{thievingRank}}</td>
-				<td>{{thievingLevel}}</td>
-				<td>{{thievingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconSlayer" title="Slayer"></div> Slayer</td>
-				<td>{{slayerRank}}</td>
-				<td>{{slayerLevel}}</td>
-				<td>{{slayerXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconFarming" title="Farming"></div> Farming</td>
-				<td>{{farmingRank}}</td>
-				<td>{{farmingLevel}}</td>
-				<td>{{farmingXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconRunecrafting" title="Runecrafting"></div> Runecrafting</td>
-				<td>{{runecraftRank}}</td>
-				<td>{{runecraftLevel}}</td>
-				<td>{{runecraftXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconHunter" title="Hunter"></div> Hunter</td>
-				<td>{{hunterRank}}</td>
-				<td>{{hunterLevel}}</td>
-				<td>{{hunterXp}}</td>
-			</tr>
-			<tr>
-				<td><div class="iconHiscores iconConstruction" title="Construction"></div> Construction</td>
-				<td>{{constructionRank}}</td>
-				<td>{{constructionLevel}}</td>
-				<td>{{constructionXp}}</td>
-			</tr>
-			{{> rs3skills}}
+		  {{#each getData}}
+		    <tr>
+		      <td>{{name}}</td>
+		      <td>{{rank}}</td>
+		      <td>{{level}}</td>
+		      <td>{{xp}}</td>
+		    </tr>
+		   {{/each}}
 		</tbody>
 	</table>
-</template>
-
-<template name="rs3skills">
-	{{#if rs3skills}}
-	<tr>
-		<td><div class="iconHiscores iconSummoning" title="Summoning"></div> Summoning</td>
-		<td>{{summoningRank}}</td>
-		<td>{{summoningLevel}}</td>
-		<td>{{summoningXp}}</td>
-	</tr>
-	<tr>
-		<td><div class="iconHiscores iconDungeoneering" title="Dungeoneering"></div> Dungeoneering</td>
-		<td>{{dungeoneeringRank}}</td>
-		<td>{{dungeoneeringLevel}}</td>
-		<td>{{dungeoneeringXp}}</td>
-	</tr>
-	<tr>
-		<td><div class="iconHiscores iconDivination" title="Divination"></div> Divination</td>
-		<td>{{divinationRank}}</td>
-		<td>{{divinationLevel}}</td>
-		<td>{{divinationXp}}</td>
-	</tr>
-	{{else}}
 	{{/if}}
 </template>
