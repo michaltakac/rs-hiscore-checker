@@ -112,8 +112,9 @@ footer {
 .iconStrength {
   	background: url('/img/Strength-icon.png') no-repeat;
 }
-.iconConstitution {
-  	background: url('/img/Constitution-icon.png') no-repeat;
+.iconConstitution,
+.iconHitpoints {
+    background: url('/img/Constitution-icon.png') no-repeat;
 }
 .iconRanged {
   	background: url('/img/Ranged-icon.png') no-repeat;
@@ -163,6 +164,7 @@ footer {
 .iconFarming {
   	background: url('/img/Farming-icon.png') no-repeat;
 }
+.iconRunecraft,
 .iconRunecrafting {
   	background: url('/img/Runecrafting-icon.png') no-repeat;
 }
